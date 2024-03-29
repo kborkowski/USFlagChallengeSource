@@ -1,0 +1,180 @@
+"'US Flag withour html' As screen.'autoLayout_Sidebar_ver1.0'":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    ScreenContainer2_1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer1_1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =flagColors.OldGloryRed
+            FillPortions: =0
+            Height: =75
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =2
+
+            Label1_1 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FillPortions: =1
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                Size: =Switch(App.ActiveScreen.Size, 4, 18, 1, 13, 16)
+                Text: =$"{App.ActiveScreen.Name} as a gallery challenge"
+                ZIndex: =1
+
+        BottomContainer1_1 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(245, 245, 245, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =16
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =3
+
+            MainContainer1_1 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =ColorFade( flagColors.OldGloryBlue, 50%)
+                FillPortions: =7
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowY: =LayoutOverflow.Scroll
+                PaddingBottom: =24
+                PaddingLeft: =24
+                PaddingRight: =24
+                PaddingTop: =24
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =5
+
+                conUSFlag As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.Center
+                    FillPortions: =0
+                    Height: =Self.Width*1/1.9
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    Width: =Parent.Width/2
+                    ZIndex: =1
+
+                    galStripes As gallery.galleryVertical:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DelayItemLoading: =true
+                        DisplayMode: =DisplayMode.View
+                        Height: =Parent.Height
+                        Items: =Sequence(13)
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplatePadding: =0
+                        TemplateSize: =Parent.Height/13
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                        rct_Stripe As rectangle:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            DisabledFill: =RGBA(161, 159, 157, 1)
+                            DisplayMode: =DisplayMode.View
+                            Fill: =If(Mod(ThisItem.Value,2)=1, flagColors.OldGloryRed,Color.White)
+                            FocusedBorderThickness: =4
+                            Height: =Parent.TemplateHeight
+                            Width: =Parent.TemplateWidth
+                            ZIndex: =1
+
+                    galUnion_1 As gallery.galleryVertical:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DelayItemLoading: =true
+                        DisplayMode: =DisplayMode.View
+                        Fill: =flagColors.OldGloryBlue
+                        Height: =Parent.Height*7/13
+                        Items: =Sequence(9)
+                        Layout: =Layout.Vertical
+                        LoadingSpinner: =LoadingSpinner.Data
+                        ShowScrollbar: =false
+                        TemplatePadding: =0
+                        TemplateSize: =Self.Height/10
+                        Width: =Parent.Height*0.76
+                        WrapCount: =0
+                        ZIndex: =2
+
+                        galStarRow_1 As gallery.galleryVertical:
+                            BorderColor: =RGBA(245, 245, 245, 1)
+                            DelayItemLoading: =true
+                            DisplayMode: =DisplayMode.View
+                            Height: =Parent.TemplateHeight
+                            Items: |
+                                =If(
+                                    Mod(ThisItem.Value, 2)=1,
+                                    Sequence(6),
+                                    Sequence(5)
+                                )
+                            Layout: =Layout.Vertical
+                            LoadingSpinner: =LoadingSpinner.Data
+                            ShowScrollbar: =false
+                            TemplatePadding: =0
+                            TemplateSize: =Parent.TemplateWidth/16
+                            Width: =Parent.TemplateWidth
+                            WrapCount: =6
+                            Y: =Self.TemplateHeight/2
+                            ZIndex: =2
+
+                            imgStar_1 As image:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledFill: =RGBA(0, 0, 0, 0)
+                                FocusedBorderThickness: =4
+                                Height: =Parent.TemplateHeight
+                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                Image: =flagStar
+                                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                PressedFill: =RGBA(0, 0, 0, 0)
+                                Width: =Parent.TemplateWidth
+                                X: =If(galStarRow_1.AllItemsCount=6, 0, Parent.TemplateWidth/2)
+                                ZIndex: =1
+

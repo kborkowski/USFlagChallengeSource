@@ -1,0 +1,18 @@
+App As appinfo:
+    BackEnabled: =true
+    Formulas: |
+        =flagColors = {
+            OldGloryRed: ColorValue("#B31942"),
+            OldGloryBlue: ColorValue("#0A3161")
+        };
+        flagStar = "data:image/svg+xml;utf8, " & EncodeUrl("<svg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 51 48'><path fill='#FFF' stroke='none' d='m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z'/></svg>");
+    OnStart: =
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+
